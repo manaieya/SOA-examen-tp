@@ -1,0 +1,130 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>projet_soa</groupId>
+  <artifactId>projet_soa</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <!-- toutes les dépendances nécessaires dans notre projet -->
+  <dependencies>
+  	<dependency>
+  	<!--Driver JDBC pour se connecter à la base MySQL.-->
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.48</version>
+	</dependency>
+	<dependency>
+	<!--nécessaire pour l'implementation de la spécification JPA -->
+	<!--pour diminuer la rédaction des requetes sql-->
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-core</artifactId>
+    	<version>5.2.6.Final</version>
+	</dependency>
+	
+<dependency>
+    <groupId>javax.persistence</groupId>
+    <artifactId>javax.persistence-api</artifactId>
+    <version>2.2</version>
+</dependency>
+	
+	<dependency>
+	<!--jersey: nécessaire pour l'implementation de jax-rs -->
+    	<groupId>org.glassfish.jersey.inject</groupId>
+    	<artifactId>jersey-hk2</artifactId>
+    	<version>2.35</version>
+	</dependency>
+	<dependency>
+	<!--Indispensable pour l'exposition des endpoints REST-->
+        <groupId>org.glassfish.jersey.core</groupId>
+        <artifactId>jersey-server</artifactId>
+        <version>2.35</version>
+    </dependency>
+
+    <!--Permet de déployer Jersey dans Tomcat -->
+    <dependency>
+        <groupId>org.glassfish.jersey.containers</groupId>
+        <artifactId>jersey-container-servlet</artifactId>
+        <version>2.35</version>
+    </dependency>
+
+    <!--pour sérialiser/désérialiser les objets Person en format JSON-->
+    <dependency>
+        <groupId>org.glassfish.jersey.media</groupId>
+        <artifactId>jersey-media-json-jackson</artifactId>
+        <version>2.35</version>
+    </dependency>
+    
+    
+    
+        <!-- Dépendances AJOUTÉES pour JSP avec Tomcat 9.0 -->
+    
+    <!-- Servlet API (Tomcat 9 utilise Servlet 4.0) -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    
+    <!-- JSP API (nécessaire pour compiler les JSP) -->
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>2.3.3</version>
+      <scope>provided</scope>
+    </dependency>
+    
+    <!-- JSTL (JavaServer Pages Standard Tag Library) -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+    
+    <!-- Jackson pour JSON (nécessaire pour jersey-media-json-jackson) -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.13.3</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.13.3</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.13.3</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.glassfish.jersey.core</groupId>
+    	<artifactId>jersey-client</artifactId>
+    	<version>2.35</version>
+	</dependency>
+   
+
+  </dependencies>
+
+
+  
+  <build>
+    <finalName>projet_soa</finalName>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
