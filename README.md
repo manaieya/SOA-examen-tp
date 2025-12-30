@@ -59,13 +59,18 @@ DELETE `/test/persons/delete/{id}` -> Supprime une personne par ID
 o Instructions pour exécuter le projet: 
 
 1.Configuration de la Base de Données
->>Créer une base de données MySQL :
+>>Créer une base de données MySQL
+
 2.Modifier persistence.xml avec vos identifiants
+
 3.Déploiement
 >>Cloner le dépôt
->>Compiler avec Maven 
+>>Compiler avec Maven
+
 4.Déployer le fichier WAR sur Tomcat 
+
 5.Démarrer Tomcat
+
 6.Accéder à l'application via :
 http://localhost:8081/projet_soa/
 
